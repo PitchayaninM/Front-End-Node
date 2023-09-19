@@ -1,22 +1,27 @@
 // Description: Node.js HTML client 
 // requires: npm install express ejs axios body-parser 
 
+
 const express = require('express'); 
 const axios = require('axios'); 
 const app = express(); 
 var bodyParser = require('body-parser'); 
 
+
 // Base URL for the API 
 //const base_url = "https://api.example.com"; 
-const base_url = "http://node50274-pitchayanin.proen.app.ruk-com.cloud:11479"; 
+const base_url = "http://localhost:3000"; 
+
 
 // Set the template engine 
 app.set('view engine', 'ejs'); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 // Serve static files 
 app.use(express.static (__dirname + '/public')); 
+
 
 app.get("/", async (req, res) => { 
     try { 
@@ -28,6 +33,7 @@ app.get("/", async (req, res) => {
     } 
 }); 
 
+
 app.get("/book/:id", async (req, res) => { 
     try { 
         const response = await axios.get(base_url + '/books/' + req.params.id); 
@@ -38,9 +44,11 @@ app.get("/book/:id", async (req, res) => {
     } 
 });
 
+
 app.get("/create", (req, res) => { 
     res.render("create"); 
 }); 
+
 
 app.post("/create", async (req, res) => { 
     try { 
@@ -52,6 +60,7 @@ app.post("/create", async (req, res) => {
         res.status(500).send('Error'); 
     } 
 }); 
+
 
 app.get("/update/:id", async (req, res) => { 
     try { 
@@ -76,6 +85,7 @@ app.post("/update/:id", async (req, res) => {
     } 
 }); 
 
+
 app.get("/delete/:id", async (req, res) => { 
     try { 
         await axios.delete(base_url + '/books/' + req.params.id);
@@ -85,6 +95,7 @@ app.get("/delete/:id", async (req, res) => {
         res.status(500).send('Error'); 
     } 
 }); 
+
 
 app.listen(5500, () => { 
             console.log('Server started on port 5500'); 
