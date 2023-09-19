@@ -87,6 +87,6 @@ app.get("/delete/:id", async (req, res) => {
     } 
 }); 
 
-app.listen(8080, () => { 
-            console.log('Server started on port 8080'); 
+app.listen(5500, () => { 
+            console.log('Server started on port 5500'); 
             });
