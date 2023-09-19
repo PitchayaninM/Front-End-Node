@@ -76,7 +76,6 @@ app.post("/update/:id", async (req, res) => {
     } 
 }); 
 
-
 app.get("/delete/:id", async (req, res) => { 
     try { 
         await axios.delete(base_url + '/books/' + req.params.id);
