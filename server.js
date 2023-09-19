@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 
 // Base URL for the API 
 //const base_url = "https://api.example.com"; 
-const base_url = "http://node50266-pitchayanin.proen.app.ruk-com.cloud:11494"; 
+const base_url = "http://50274"; 
 
 
 // Set the template engine 
@@ -97,6 +97,6 @@ app.get("/delete/:id", async (req, res) => {
 }); 
 
 
-app.listen(5500, () => { 
-            console.log('Server started on port 5500'); 
+app.listen(8080, () => { 
+            console.log('Server started on port 8080'); 
             });
