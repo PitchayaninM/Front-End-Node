@@ -1,0 +1,28 @@
+<!-- views/all_data.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Data</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <h1>All Data</h1>
+    <table class="book-table">
+        <tr>
+            <th>Title</th>
+            <th>Borrower</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+        </tr>
+        <% for (var i = 0; i < allData.length; i++) { %>
+            <tr>
+                <td><%= allData[i].title %></td>
+                <td><%= allData[i].borrower ? allData[i].borrower.name : 'N/A' %></td>
+                <td><%= allData[i].borrowingDate ? allData[i].borrowingDate.borrow_date : 'N/A' %></td>
+                <td><%= allData[i].borrowingDate ? allData[i].borrowingDate.return_date : 'N/A' %></td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/">Back to List</a>
+</body>
+</html>
