@@ -23,9 +23,10 @@ app.use(express.static(__dirname + '/public'));
 //     res.status(500).send('Error');
 //   }
 // });
+
 app.get("/", async (req, res) => {
     try {
-      const response = await axios.get(base_url + '/all_data'); // เปลี่ยน '/books' เป็น '/all_data'
+      const response = await axios.get(base_url + '/all_data');
       res.render("books", { books: response.data });
     } catch (err) {
       console.error(err);
