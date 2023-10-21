@@ -10,7 +10,8 @@
     <p>Borrower: <%= book.borrower ? book.borrower.name : 'N/A' %></p>
     <p>Borrow Date: <%= book.borrowingDate ? book.borrowingDate.borrow_date : 'N/A' %></p>
     <p>Return Date: <%= book.borrowingDate ? book.borrowingDate.return_date : 'N/A' %></p>
-    <a href="/all_data/<%= book.id %>">View</a>
+
+    <a href="/book/<%= book.id %>">View</a>
     <a href="/update/<%= book.id %>">Edit</a>
     <a href="/delete/<%= book.id %>">Delete</a>
     <a href="/">Back to List</a>

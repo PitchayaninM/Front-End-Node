@@ -1,3 +1,4 @@
+<!-- update.ejs -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +15,11 @@
         <input type="text" id="borrowerName" name="borrowerName" value="<%= book.borrower.name %>">
         <br>
         <label for="borrowDate">Borrow Date:</label>
-        <input type="date" id="borrowDate" name="borrowDate" value="<%= book.borrowingDate.borrow_date %>">
+        <input type="date" id="borrowDate" name="borrowDate" value="<%= book.borrowingDate ? book.borrowingDate.borrow_date : '' %>">
         <br>
         <label for="returnDate">Return Date:</label>
-        <input type="date" id="returnDate" name="returnDate" value="<%= book.borrowingDate.return_date %>">
+        <input type="date" id="returnDate" name="returnDate" value="<%= book.borrowingDate ? book.borrowingDate.return_date : '' %>">
+
         <br>
         <input type="submit" value="Update">
     </form>

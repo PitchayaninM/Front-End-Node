@@ -24,25 +24,46 @@ app.use(express.static(__dirname + '/public'));
 //   }
 // });
 
-app.get("/", async (req, res) => {
-    try {
-      const response = await axios.get(base_url + '/all_data');
-      res.render("books", { books: response.data });
-    } catch (err) {
-      console.error(err);
-      res.status(500).send('Error');
-    }
-  });
+// app.get("/", async (req, res) => {
+//     try {
+//       const response = await axios.get(base_url + '/all_data');
+//       res.render("books", { books: response.data });
+//     } catch (err) {
+//       console.error(err);
+//       res.status(500).send('Error');
+//     }
+//   });
 
-app.get("/book/:id", async (req, res) => {
+// app.get("/book/:id", async (req, res) => {
+//   try {
+//     const response = await axios.get(base_url + '/books/' + req.params.id);
+//     res.render("book", { book: response.data });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send('Error');
+//   }
+// });
+
+app.get("/", async (req, res) => {
   try {
-    const response = await axios.get(base_url + '/books/' + req.params.id);
-    res.render("book", { book: response.data });
+    const response = await axios.get(base_url + '/all_data') // เปลี่ยน '/books' เป็น '/all_data'
+    res.render("books", { books: response.data });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error');
   }
 });
+
+app.get("/book/:id", async (req, res) => {
+  try {
+    const response = await axios.get(base_url + '/all_data/' + req.params.id);  // เปลี่ยนเส้นทางเป็น /all_data
+    res.render("book", { book: response.data });  // เปลี่ยนตัวแปรเป็น "book"
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error');
+  }
+});
+
 
 app.get("/create", (req, res) => {
   res.render("create");
@@ -102,7 +123,7 @@ app.get("/delete/:id", async (req, res) => {
 
 app.get("/all_data/:id", async (req, res) => {
     try {
-      const response = await axios.get(base_url + '/book/' + req.params.id);
+      const response = await axios.get(base_url + '/books/' + req.params.id);
       res.render("all_data", { book: response.data });
     } catch (err) {
       console.error(err);
