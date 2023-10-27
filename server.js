@@ -56,14 +56,13 @@ app.get("/", async (req, res) => {
 
 app.get("/book/:id", async (req, res) => {
   try {
-    const response = await axios.get(base_url + '/all_data/' + req.params.id);  // เปลี่ยนเส้นทางเป็น /all_data
-    res.render("book", { book: response.data });  // เปลี่ยนตัวแปรเป็น "book"
+    const response = await axios.get(base_url + '/book/' + req.params.id);
+    res.render("book", { books: response.data });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error');
   }
 });
-
 
 app.get("/create", (req, res) => {
   res.render("create");
