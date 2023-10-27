@@ -9,6 +9,7 @@
     <h1>Books</h1>
     <table>
         <tr>
+            <th></th>
             <th>Book</th>
             <th>Borrower</th>
             <!-- <th>Borrow Date</th>
@@ -19,6 +20,7 @@
         </tr>
         <% for (var i=0; i<books.length; i++) { %>
             <tr>
+                <td></td>
                 <td><%= books[i].title %></td>
                 <td><%= books[i].borrower ? books[i].borrower.name : 'N/A' %></td>
                 <!-- <td><%= books[i].borrowingDate ? books[i].borrowingDate.borrow_date : 'N/A' %></td>
