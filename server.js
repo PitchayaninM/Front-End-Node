@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 // Base URL for the API
 // const base_url = "https://api.example.com";
 // const base_url = "http://localhost:3000";
-const base_url = "http://node50266-pitchayanin.proen.app.ruk-com.cloud;
+const base_url = "http://node50266-pitchayanin.proen.app.ruk-com.cloud";
 
 // Set the template engine
 app.set('view engine' , 'ejs');
@@ -285,10 +285,10 @@ app.get("/data/delete/:id" , async (req,res) => {
         res.status(500).send('Error');
     }
 });
-app.listen(3900, ()=> {
-    console.log('Server started on port 3900');
-});
-
-// app.listen(8080, ()=> {
-//     console.log('Server started on port 8080');
+// app.listen(3900, ()=> {
+//     console.log('Server started on port 3900');
 // });
+
+app.listen(8080, ()=> {
+    console.log('Server started on port 8080');
+});
