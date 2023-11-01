@@ -9,6 +9,7 @@
           <table>
               <tr>
                 <th>ลำดับ</th>
+                <th>ชื่อหนังสือ</th>
                 <th>ชื่อผู้ยืม</th>
                 <th></th>
                 
@@ -16,7 +17,7 @@
               <% for(var i=0; i < books1.length; i++) { %>
               <tr>
                   <td><%= books1[i].id %></td>
-                  
+                  <td><%= books2[books1[i].book_id - 1].book_name %></td>
                   <td><%= books3[books1[i].user_id - 1].user_name %></td>
 
                   <td>
