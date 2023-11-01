@@ -1,4 +1,10 @@
-/* Set font family and size for the whole page */
+<!-- update.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Book</title>
+    <style>
+      /* Set font family and size for the whole page */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -16,8 +22,7 @@ h1 {
 /* Style the table */
 table {
   border-collapse: collapse;
-  width: 60%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 th, td {
@@ -26,7 +31,7 @@ th, td {
 }
 
 th {
-  background-color: #DB7093;
+  background-color: #2C3E50;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
@@ -121,11 +126,29 @@ th, td {
   padding: 16px;
 }
 
-.container {
-  max-width: 200px;
-  margin: 0 auto;
-  background-color: lemonchiffon;
-  text-align: center;
- }
-
-
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 200px; /* ปรับขนาดตามต้องการ */
+    margin-bottom: 10px; /* ระยะห่างข้างล่าง */
+}
+  </style>
+</head>
+<body>
+    <h1>Update Book</h1>
+    <form method="post" action="http://localhost:5500/user/update/<%= book.user_id %>">
+        <label for="user">user_name:</label>
+        <input type="text" id="user_name" name="user_name" value="<%= book.user_name %>">
+        
+        <input type="submit" value="Update">
+    </form>
+    <div class="link-center">
+    <a href="http://localhost:5500/user/<%= book.user_id %>">View</a>
+    <!-- <a href="http://localhost:5500/user/delete/<%= book.user_id %>">Delete</a> -->
+    <a href="http://localhost:5500/user">Back to List</a>
+    </div>
+</body>
+</html>

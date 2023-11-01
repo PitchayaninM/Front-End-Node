@@ -1,0 +1,31 @@
+<!-- book.ejs -->
+<html> 
+    <head> 
+        <title>Data</title>
+        <link rel="stylesheet" href="../css/style.css"/> 
+    </head>
+    <body>
+        <h1>ข้อมูล</h1>
+        <table>
+            <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อหนังสือ</th>
+                <th>ชื่อผู้ยืม</th>
+                <th>วันที่ยืม</th>
+                <th>วันที่คืน</th>
+            </tr>
+            <tr>
+                <td><%= Book.id %></td>
+                <td><%= Book2[Book.book_id - 1].book_name %></td>
+                <td><%= Book3[Book.user_id - 1].user_name %></td>
+                <td><%= Book3[Book.user_id - 1].borrowdate %></td>
+                <td><%= Book3[Book.user_id - 1].returndate %></td>
+            </tr>
+        </table>
+        <div class="link-center">
+        <a href="http://localhost:5500/data/update/<%= Book.id %>">Edit</a>
+        <a href="http://localhost:5500/data">Back to List</a>
+        </div>
+    </body>
+</html>
+

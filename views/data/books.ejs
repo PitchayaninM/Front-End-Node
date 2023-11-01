@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Data</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+      </head>
+      <body>
+          <h1>รายการข้อมูล</h1>
+          <table>
+              <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อผู้ยืม</th>
+                <th></th>
+                
+              </tr>
+              <% for(var i=0; i < books1.length; i++) { %>
+              <tr>
+                  <td><%= books1[i].id %></td>
+                  
+                  <td><%= books3[books1[i].user_id - 1].user_name %></td>
+
+                  <td>
+                      <a href="http://localhost:5500/data/<%= books1[i].id %>">View</a>
+                      
+                      <a href="http://localhost:5500/data/delete/<%= books1[i].id %>">Delete</a>
+                  </td>
+              </tr>
+              <% } %>
+          </table>
+          <a href="http://localhost:5500/dataa/create">Create New Data</a>
+          <a href="http://localhost:5500/">Back to List</a>
+      </body>
+      </html>

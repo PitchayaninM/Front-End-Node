@@ -1,0 +1,31 @@
+<!-- book.ejs -->
+<html> 
+    <head> 
+        <title>User</title>
+        <link rel="stylesheet" href="../css/style.css"/> 
+</head> 
+<body> 
+    <h1>ผู้ยืม</h1>
+    <table>
+        <tr>
+            <th>ลำดับ</th>
+            <th>ชื่อผู้ยืม</th>
+            <th>วันยืม</th>
+            <th>วันคืน</th>
+            
+        </tr>
+        <tr>
+            <td><%= book.user_id %></td>
+            <td><%= book.user_name %></td>
+            <td><%= book.borrowdate %></td>
+            <td><%= book.returndate %></td>
+            
+        </tr>
+    </table>
+    <div class="link-center">
+    <a href="update/<%= book.user_id %>">Edit</a>
+    <!-- <a href="delete/<%= book.book_id %>">Delete</a> -->
+    <a href="http://localhost:5500/user">Back to List</a>
+    </div>
+</body>
+</html>
